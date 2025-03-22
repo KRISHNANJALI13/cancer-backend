@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { SarcomaModule } from './sarcoma/sarcoma.module';
 import { UploadsModule } from './upload/upload.module';
+import { LungModule } from './lung/lung.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { UploadsModule } from './upload/upload.module';
     MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/cancer'), // Use default if undefined
     AuthModule,
     SarcomaModule,
-    UploadsModule
+    UploadsModule,
+    LungModule
   ],
 })
 export class AppModule {}
