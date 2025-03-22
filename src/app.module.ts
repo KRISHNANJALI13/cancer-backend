@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { SarcomaModule } from './sarcoma/sarcoma.module';
 import { UploadsModule } from './upload/upload.module';
 import { LungModule } from './lung/lung.module';
+import { BrainTumorModule } from './brainTumor/brainTumor.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { LungModule } from './lung/lung.module';
     AuthModule,
     SarcomaModule,
     UploadsModule,
-    LungModule
+    LungModule,
+    BrainTumorModule
   ],
 })
 export class AppModule {}
