@@ -31,6 +31,10 @@ export class UploadsController {
       const filename = file.originalname.split('.')[0]; // Remove file extension
       return await this.uploadsService.generateBrainReport(filename);
     }
+    else if (metadata?.ImageDescription === "leukemia"){
+      const filename = file.originalname.split('.')[0]; // Remove file extension
+      return await this.uploadsService.generateLeukemiaReport(filename);
+    }
     else {
       return { data: "Error scanning the image" };
     }

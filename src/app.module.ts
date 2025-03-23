@@ -6,6 +6,7 @@ import { SarcomaModule } from './sarcoma/sarcoma.module';
 import { UploadsModule } from './upload/upload.module';
 import { LungModule } from './lung/lung.module';
 import { BrainTumorModule } from './brainTumor/brainTumor.module';
+import { LeukemiaModule } from './leukemia/leukemia.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { BrainTumorModule } from './brainTumor/brainTumor.module';
     SarcomaModule,
     UploadsModule,
     LungModule,
-    BrainTumorModule
+    BrainTumorModule,
+    LeukemiaModule
   ],
 })
 export class AppModule {}
