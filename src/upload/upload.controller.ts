@@ -22,10 +22,14 @@ export class UploadsController {
     // Check if ImageDescription is "Tumor"
     if (metadata?.ImageDescription === "Tumor") {
       const filename = file.originalname.split('.')[0]; // Remove file extension
-      return await this.uploadsService.generateFakeReport(filename);
+      return await this.uploadsService.generateSarcomaReport(filename);
     }
     else if (metadata?.ImageDescription === "Non Tumor"){
       return { data: "no tumor" };
+    }
+    else if (metadata?.ImageDescription === "brain"){
+      const filename = file.originalname.split('.')[0]; // Remove file extension
+      return await this.uploadsService.generateBrainReport(filename);
     }
     else {
       return { data: "Error scanning the image" };
