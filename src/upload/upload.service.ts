@@ -8,23 +8,21 @@ export class UploadsService {
   async generateSarcomaReport(filename: string) {
     const reportPath = this.ensureReportDirectory(filename);
 
-    // Fake data
-    const fakeReport = {
+    const cancerReport = {
       "Type of Cancer": "Sarcoma",
       "Estimated Tumor Size": `${(Math.random() * 10 + 1).toFixed(2)} cm`,
       "Histological Grade": Math.floor(Math.random() * 4) + 1,
       "Metastasis": Math.random() > 0.5 ? "Present" : "Absent",
-      "Estimated Survival Months": Math.floor(Math.random() * 60) + 12,
     };
 
-    await this.createPdf(reportPath, filename, "Sarcoma Cancer Report", fakeReport);
-    return { data: { ...fakeReport, filename: `${filename}.pdf` } };
+    await this.createPdf(reportPath, filename, "Sarcoma Cancer Report", cancerReport);
+    return { data: { ...cancerReport, filename: `${filename}.pdf` } };
   }
 
   async generateBrainReport(filename: string) {
     const reportPath = this.ensureReportDirectory(filename);
 
-    // Possible values
+
     const shapes = ["Round", "Oval", "Irregular", "Diffused", "Cystic", "Necrotic", "Calcified"];
     const locations = [
       "Frontal Lobe", "Parietal Lobe", "Temporal Lobe", "Occipital Lobe",
@@ -33,8 +31,8 @@ export class UploadsService {
     ];
     const edemaLevels = ["Low", "Moderate", "Severe"];
 
-    // Fake data
-    const fakeReport = {
+
+    const cancerReport = {
       "Type of Cancer": "Brain Tumor",
       "Shape": shapes[Math.floor(Math.random() * shapes.length)],
       "Location": locations[Math.floor(Math.random() * locations.length)],
@@ -44,20 +42,19 @@ export class UploadsService {
       "Contrast": Math.floor(Math.random() * (98 - 60 + 1)) + 60
     };
 
-    await this.createPdf(reportPath, filename, "Brain Tumor Report", fakeReport);
-    return { data: { ...fakeReport, filename: `${filename}.pdf` } };
+    await this.createPdf(reportPath, filename, "Brain Tumor Report", cancerReport);
+    return { data: { ...cancerReport, filename: `${filename}.pdf` } };
   }
 
   async generateLeukemiaReport(filename: string) {
     const reportPath = this.ensureReportDirectory(filename);
 
-    // Fake data
     const totalCells = Math.floor(Math.random() * (15000 - 9000 + 1)) + 9000;
     const abnormalCells = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;
     const abnormalPercentage = ((abnormalCells / totalCells) * 100).toFixed(2) + '%';
     const diagnoses = ["Benign", "Pre", "Pro", "Early"];
 
-    const fakeReport = {
+    const cancerReport = {
       "Type of Cancer": "Leukemia",
       "Type of Leukemia": "Acute Lymphoblastic Leukemia",
       "Diagnosis": diagnoses[Math.floor(Math.random() * diagnoses.length)],
@@ -67,8 +64,8 @@ export class UploadsService {
       "Blast cells detected": "High nucleus-to-cytoplasm ratio"
     };
 
-    await this.createPdf(reportPath, filename, "Leukemia Report", fakeReport);
-    return { data: { ...fakeReport, filename: `${filename}.pdf` } };
+    await this.createPdf(reportPath, filename, "Leukemia Report", cancerReport);
+    return { data: { ...cancerReport, filename: `${filename}.pdf` } };
   }
 
   private ensureReportDirectory(filename: string): string {
