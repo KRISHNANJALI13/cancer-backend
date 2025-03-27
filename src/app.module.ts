@@ -7,6 +7,7 @@ import { UploadsModule } from './upload/upload.module';
 import { LungModule } from './lung/lung.module';
 import { BrainTumorModule } from './brainTumor/brainTumor.module';
 import { LeukemiaModule } from './leukemia/leukemia.module';
+import { PredictLungModule } from './predictLung/predictLung.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { LeukemiaModule } from './leukemia/leukemia.module';
     UploadsModule,
     LungModule,
     BrainTumorModule,
-    LeukemiaModule
+    LeukemiaModule,
+    PredictLungModule
   ],
 })
 export class AppModule {}
